@@ -1112,6 +1112,12 @@ private extension ProcessInfo {
     }
 }
 
+#if os(Linux)
+private extension ObjCBool {
+    var boolValue: Bool { return Bool(self) }
+}
+#endif
+
 #if !os(Linux)
 extension FileSystem {
     /// A reference to the document folder used by this file system.
